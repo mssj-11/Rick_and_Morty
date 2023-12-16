@@ -18,11 +18,11 @@ app.get('/', (req, res) => {
 
 // Ruta de búsqueda
 app.get('/api/search', async (req, res) => {
-  const { characterName } = req.query;
+  const { characterName, per_page, page } = req.query;
 
   try {
     const response = await axios.get(
-      `https://rickandmortyapi.com/api/character/?name=${characterName}`
+      `https://rickandmortyapi.com/api/character/?name=${characterName}&per_page=${per_page}&page=${page}`
     );
 
     res.json(response.data);

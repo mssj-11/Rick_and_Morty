@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const consultApi = async () => {
       if (search === '') return;
-      const characterPerPage = 5;
+      const characterPerPage = 5;//La API no permite modificar la cantidad de resultados por pagina y por defecto arroja 20 resultados de manera automatica.
 
       const url = `http://localhost:3001/api/search?characterName=${search}&per_page=${characterPerPage}&page=${actualpage}`;
 
@@ -28,8 +28,7 @@ function App() {
       // Mover la pantalla hacia arriba
       const jumbotron = document.querySelector('.jumbotron');
       jumbotron.scrollIntoView({ behavior: 'smooth' });
-      
-    };
+    }
 
     consultApi();
   }, [search, actualpage]);
@@ -60,14 +59,14 @@ function App() {
         <ListCharacters characters={characters} />
 
         {(actualpage === 1) ? null : (
-          <button onClick={previousPage} type="button" className="mr-1 btn-primary">
-            &laquo; Previous
+          <button onClick={previousPage} type="button" className="mr-2 btn btn-info">
+             Previous
           </button>
         )}
 
         {(actualpage === totalpages) ? null : (
-          <button onClick={nextPage} type="button" className="mr-1 btn-primary">
-            Next &raquo;
+          <button onClick={nextPage} type="button" className="mr-2 btn btn-info">
+            Next
           </button>
         )}
       </div>

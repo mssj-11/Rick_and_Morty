@@ -17,7 +17,7 @@ const Character = ({ character }) => {
           </p>
         </div>
         <div className="card-footer">
-          <a href={`https://rickandmortyapi.com/api/character/${id}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-block">
+          <a href={`https://rickandmortyapi.com/api/character/${id}`} target="_blank" rel="noopener noreferrer" className="btn btn-info btn-block">
             View Details
           </a>
         </div>
