@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import InfoCharacter from './InfoCharacter';
 
 const Character = ({ character }) => {
   const { id, name, status, species, image } = character;
+  const [showInfo, setShowInfo] = useState(false);
+
+  const handleClick = () => {
+    setShowInfo(true);
+  };
+
+  const handleClose = () => {
+    setShowInfo(false);
+  };
 
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -17,11 +27,12 @@ const Character = ({ character }) => {
           </p>
         </div>
         <div className="card-footer">
-          <a href={`https://rickandmortyapi.com/api/character/${id}`} target="_blank" rel="noopener noreferrer" className="btn btn-info btn-block">
+          <button onClick={handleClick} className="btn btn-info btn-block">
             View Details
-          </a>
+          </button>
         </div>
       </div>
+      {showInfo && <InfoCharacter characterId={id} onClose={handleClose} />}
     </div>
   );
 };

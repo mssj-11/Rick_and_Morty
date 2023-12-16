@@ -35,7 +35,7 @@ const SearchForm = ({ saveSearch }) => {
         </div>
       </div>
       {/*If an error exist, the ERROR component will be created*/}
-      {error ? <Error mensaje="Add a search term" /> : null}
+      {error ? <Error message="Add a search term" /> : null}
     </form>
   );
 };

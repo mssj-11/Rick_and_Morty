@@ -32,6 +32,20 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
+// Ruta para obtener detalles de un personaje por ID
+app.get('/api/character/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
+    const characterInfo = response.data;
+    res.json(characterInfo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
