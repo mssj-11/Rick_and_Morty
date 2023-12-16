@@ -22,7 +22,7 @@ function App() {
       saveCharacter(result.results);
 
       // Calcular Total de páginas
-      const calculateTotalPages = Math.ceil(result.info.count / characterPerPage);
+      const calculateTotalPages = Math.ceil(result.count / characterPerPage);
       saveTotalPages(calculateTotalPages);
 
       // Mover la pantalla hacia arriba
