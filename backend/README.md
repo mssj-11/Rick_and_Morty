@@ -33,3 +33,18 @@ File `package.json`
   "start": "nodemon index.js"
 }
 ```
+
+
+##  Documentation API 
+In the browser
+```sh
+http://localhost:3001
+```
+Response: `¡Welcome to the Rick and Morty API!`
+<br>
+
+In the browser enter character name `http://localhost:3001/api/search?characterName={name}` for example:
+```sh
+http://localhost:3001/api/search?characterName=Rick
+```
+Response: `Character information`
