@@ -1,8 +1,8 @@
 #   Backend - Rick and Morty
 ##  Create project
 ```sh
-mkdir RickAndMortyBackend
-cd RickAndMortyBackend
+mkdir backend
+cd backend
 ```
 
 *   ### Initialize the Node project:
